@@ -1,0 +1,28 @@
+const Immutable                              = require('immutable');
+const { combineReducers }                    = require('redux'); 
+const {
+    MAKE_REQUEST
+}                                             = require('../actions/ttb_constants');
+
+
+
+const InitalState = Immutable.fromJS({});
+
+
+const make_request = (state = InitalState, action) => {
+    switch (action.type) {
+        case MAKE_REQUEST:
+            console.log('reducer', action.request);
+            return "make_request";
+        default: 
+            return state;
+    }
+}
+
+
+const ttbApp = combineReducers({
+    make_request,
+});
+
+
+module.exports = ttbApp
